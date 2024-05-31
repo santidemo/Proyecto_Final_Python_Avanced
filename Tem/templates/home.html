@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'porfolio/Presentation.jpg' %}" alt="" width="300" height="200">
+    </div>
+
+    <div class="col-md-8 my-auto">
+        <h1> Bienvenidos a <strong>BlogShare</strong> </h1>
+        <p> 
+            Esta página web ha sido creada como una plataforma de blog, donde los usuarios, incluyendo profesores, pueden subir y publicar sus propios contenidos. El objetivo principal 
+            es brindar un espacio donde se puedan compartir conocimientos, 
+            ideas e inspiraciones con una audiencia más amplia.
+        </p>
+        <a href="{% static 'porfolio/Acerca de.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3"> Mas informacion</a>
+    </div>
+</header>
+
+<div class="row my-4 text-center p-4">
+    <h3>proyectos </h3>
+    <p>Ven y explora los proyectos subidos! </p>
+{%for project in projects %}
+
+    <div class="col my-4">
+        <div class="card bg-black card-project">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+            <div class="card-body">
+                <h2 class="text-white">{{project.title}}</h2>
+                <p class="text-white" >{{project.descripcion}}</p>
+                
+
+                {% if project.url %}
+                    <a href="{{project.url}}" class="btn btn-secondary rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
+
+</div>
+
+
+
+
+
