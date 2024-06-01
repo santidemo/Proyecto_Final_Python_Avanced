@@ -13,8 +13,8 @@
             </div>
             <div class="col-9">
                 <h2>{{post.title}}</h2>
-                <p>{{post.description.html|striptags|truncatechars:100  }}</p>
-                <p>{{post.date|date:'M d Y'|upper}}</p>
+                <div >{{ post.description|safe }}</div>
+                <p class="text-white">{{post.date|date:'M d Y'|upper}}</p>
                 <a href="{% url 'blog:post_detail' post.id  %}" class="btn btn-primary">{{post.title}}</a>
             </div>
         </div>

@@ -4,16 +4,15 @@
 
 <div class="text-center">
     <h2>{{post.title}}</h2>
-    <h3 class="my-2 h5 text-muted">{{post.date|date:'F jS Y'}}</h3>
+    <h3 class="my-2 h5 text-white">{{post.date|date:'F jS Y'}}</h3>
 
     <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fuild" width="600" height="400">
 
     <div class="my-4">
-        <p>{{post.description.html|safe}}</p>
+        <div>{{ post.description.html|safe }}</div>
 
     </div>
 </div>
-
 
 
 {% endblock %}
