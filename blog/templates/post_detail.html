@@ -9,7 +9,7 @@
     <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fuild" width="600" height="400">
 
     <div class="my-4">
-        <p>{{post.description|safe}}</p>
+        <p>{{post.description.html|safe}}</p>
 
     </div>
 </div>
